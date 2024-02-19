@@ -40,9 +40,9 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				{% set navigation_bar = [ ('/', 'home', 'Home'), ('/who_we_are',
-				'who_we_are', 'Who We Are'), ('/how_to_use', 'how_to_use', 'How To
-				Use'), ('/contact_us', 'contact_us', 'Contact Us') ] -%} {% set
+				{% set navigation_bar = [ ('/en', 'home', 'Home'), ('/en/who_we_are',
+				'who_we_are', 'Who We Are'), ('/en/how_to_use', 'how_to_use', 'How To
+				Use'), ('/en/order_now', 'order_now', 'Order Now'), ('/en/contact_us', 'contact_us', 'Contact Us') ] -%} {% set
 				active_page = active_page|default('home') -%}
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,19 +84,23 @@
 							<div class="col-lg-6 col-12 text-center justifiy-content-center">
 								<div class="row text-center" style="row-gap: 1rem">
 									<div class="col-lg-5 col-12">
-										<a href="/">Home</a>
+										<a href="/en">Home</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/who_we_are">Who We Are</a>
+										<a href="/en/order_now">Order Now</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/how_to_use">How To Use</a>
+										<a href="/en/who_we_are">Who We Are</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/contact_us">Contact Us</a>
+										<a href="/en/how_to_use">How To Use</a>
 									</div>
 									<div class="col-lg-5 col-12">
-										<a href="/">Disclaimers</a>
+										<a href="/en/contact_us">Contact Us</a>
+									</div>
+
+									<div class="col-lg-5 col-12">
+										<a href="/en">Disclaimers</a>
 									</div>
 								</div>
 							</div>

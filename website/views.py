@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request
+import os
 import requests
 
-TOKEN = "6787802673:AAEYf54l5iV14AG0osZ_tIBWxntjC1TYQAk"
+TOKEN = os.environ.get("tg_TOKEN")
 chat_id = "360314133"
 
 

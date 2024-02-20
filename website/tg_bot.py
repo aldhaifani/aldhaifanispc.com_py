@@ -11,3 +11,7 @@ def send_message(msg):
     )
 
     print(requests.get(url).json())
+
+
+if __name__ == "__main__":
+    assert 1 == 1

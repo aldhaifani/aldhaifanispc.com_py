@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template, request
-import os
 import requests
 
-TOKEN = os.environ.get("fetch_orders_token")
+TOKEN = "6787802673:AAEYf54l5iV14AG0osZ_tIBWxntjC1TYQAk"
 chat_id = "360314133"
 
 

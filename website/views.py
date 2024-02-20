@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+from tg_bot import send_message
 
 views = Blueprint("views", __name__)
 
@@ -30,9 +31,16 @@ def how_to_use_en():
     return render_template("how_to_use.html")
 
 
-@views.route("/en/order_now")
-@views.route("/en/order_now/")
+@views.route("/en/order_now", methods=["GET", "POST"])
+@views.route("/en/order_now/", methods=["GET", "POST"])
 def order_now_en():
+    if request.method == "POST":
+        data = request.form
+        data_str = ""
+        for key in data.keys():
+            data_str += key.replace("_", " ").capitalize() + ": "
+            data_str += data.get(key) + "\n"
+        send_message(data_str)
     return render_template("order_now.html")
 
 

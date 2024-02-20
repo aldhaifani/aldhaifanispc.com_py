@@ -1,5 +1,18 @@
 from flask import Blueprint, render_template, request
-from tg_bot import send_message
+import os
+import requests
+
+TOKEN = os.environ.get("fetch_orders_token")
+chat_id = "360314133"
+
+
+def send_message(msg):
+    url = (
+        f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg}"
+    )
+
+    return requests.get(url).json()
+
 
 views = Blueprint("views", __name__)
 

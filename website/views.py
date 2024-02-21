@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash
 import os
 import requests
 
@@ -11,7 +11,19 @@ def send_message(msg):
         f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg}"
     )
 
-    return requests.get(url).json()
+    try:
+        print("here")
+        result = requests.get(url, timeout=15)
+        flash("Order placed successfully! We will  contact you soon.", "success")
+    except requests.exceptions.Timeout:
+        print("here2")
+        flash(
+            "Failed to place your order! Please try again or contact us +968-90620008.",
+            "danger",
+        )
+        result = ""
+
+    return result
 
 
 views = Blueprint("views", __name__)

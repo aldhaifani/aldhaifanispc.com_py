@@ -23,3 +23,7 @@
 .qty-minus:hover {
 	opacity: 0.9;
 }
+
+.flash-container {
+  margin-top: 2rem;
+}

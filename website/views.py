@@ -29,6 +29,11 @@ def send_message(msg):
 views = Blueprint("views", __name__)
 
 
+@app.route("/favicon.ico")
+def favicon():
+    return "", 200
+
+
 @views.route("/flaskapp/")
 @views.route("/flaskapp/home")
 @views.route("/flaskapp/home/")

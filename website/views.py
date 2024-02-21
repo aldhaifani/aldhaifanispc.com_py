@@ -29,7 +29,7 @@ def send_message(msg):
 views = Blueprint("views", __name__)
 
 
-@app.route("/favicon.ico")
+@views.route("/favicon.ico")
 def favicon():
     return "", 200
 
